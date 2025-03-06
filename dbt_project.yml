@@ -40,5 +40,6 @@ models:
     # Applies to all files under models/example/
     bi_sap_union_ct_ms_data:
       +materialized: table
+      +schema: osp_analytics
       input:
         +materialized: input
