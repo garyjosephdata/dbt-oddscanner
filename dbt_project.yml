@@ -42,4 +42,4 @@ models:
       +materialized: table
       +schema: osp_analytics
       input:
-        +materialized: input
+        +materialized: ephemeral
