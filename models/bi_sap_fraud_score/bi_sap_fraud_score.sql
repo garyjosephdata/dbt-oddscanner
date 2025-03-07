@@ -65,7 +65,7 @@ from (
         , sum(clicks) as clicks
         , sum(signups) as signups
         , sum(ftds) as ftds
-      from {{ ref('sap_union_metrics_daily')}}
+      from {{ ref('bi_sap_union_ct_ms_data')}}
       group by
         1, 2
       having clicks > 0
@@ -79,4 +79,4 @@ left join {{ ref('sap_fraud_test_6')}} t6 on a.sap_account_ruko_id = t6.sap_acco
 left join {{ ref('sap_fraud_test_7')}} t7 on a.sap_account_ruko_id = t7.sap_account_ruko_id
 )
 
-select 'osp_analytics.sap_fraud_score' as table_name, * from sap_bia_scores
+select 'osp_analytics.bi_sap_fraud_score' as table_name, * from sap_bia_scores
