@@ -1,0 +1,40 @@
+WITH sap_ms_metrics AS (
+    SELECT 
+    'sap_ct_ms_data' AS source_table,
+    marketing_source_id,
+    marketing_source_name,
+    sap_marketing_source_id,
+    sap_marketing_source_ruko_id,
+    sap_marketing_source_name,
+    sap_account_id,
+    sap_account_ruko_id,
+    sap_account_name,
+    NULL AS sap_traffic_source_id,
+    sap_traffic_source_ruko_id,
+    sap_traffic_source_name,
+    date,
+    sap_affiliate_link AS sap_affiliate_link_id,
+    sap_affiliate_link_ruko_id,
+    affiliate_program_name AS sap_affiliate_link_name,
+    NULL AS sap_advertiser_id,
+    NULL AS sap_advertiser_ruko_id,
+    sap_advertiser_name,
+    geographical_area,
+    adv_geog_area,
+    sap_deal_id,
+    sap_deal_ruko_id,
+    sap_deal_name,
+    clicks,
+    signups,
+    ftds,
+    deposits,
+    turnover,
+    net_revenue,
+    cpa_count,
+    cpa_earnings,
+    rs_earnings,
+    total_earnings
+  FROM {{ source('sap', 'ms_metrics') }} a
+)
+
+SELECT * FROM sap_ms_metrics

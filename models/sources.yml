@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+    - name: sap
+      schema: sub_affiliate
+      tables:
+        - name: advertisers
+          identifier: sap_advertisers
+        - name: accounts
+          identifier: sap_accounts
+        - name: dv_metrics
+          identifier: sap_dv_affiliate_links
+        - name: ms_metrics
+          identifier: sap_ct_ms_data
+        - name: dv_weekly_earnings
+          identifier: sap_dv_weekly_earnings
+        - name: ct_weekly_earnings
+          identifier: sap_ct_weekly_earnings
+        - name: dv_monthly_earnings
+          identifier: sap_dv_monthly_earnings
+        - name: ct_monthly_earnings
+          identifier: sap_ct_monthly_earnings
+        - name: sap_customers
+          identifier: sap_tracking_customers
+    - name: analytics
+      schema: osp_analytics
+      tables:
+        - name: config_sap_tests
+        

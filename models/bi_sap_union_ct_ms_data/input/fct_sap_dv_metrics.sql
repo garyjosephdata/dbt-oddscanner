@@ -1,0 +1,41 @@
+WITH sap_dv_metrics AS (
+    SELECT
+        'sap_dv_affiliate_links' AS source_table,
+        NULL AS marketing_source_id,
+        '' AS marketing_source_name,
+        NULL AS sap_marketing_source_id,
+        NULL AS sap_marketing_source_ruko_id,
+        '' AS sap_marketing_source_name,
+        sap_account AS sap_account_id,
+        sap_account_ruko_id,
+        sap_account_name,
+        sap_traffic_source_id,
+        CAST(sap_traffic_source_ruko_id AS STRING) AS sap_traffic_source_ruko_id,
+        sap_traffic_source_name,
+        date,
+        CAST(sap_affiliate_link_id AS STRING) AS sap_affiliate_link_id,
+        CAST(sap_affiliate_link_ruko_id AS STRING) AS sap_affiliate_link_ruko_id,
+        sap_affiliate_link_name,
+        sap_advertiser_id,
+        sap_advertiser_ruko_id,
+        sap_advertiser_name,
+        '' AS geographical_area,
+        '' AS adv_geog_area,
+        NULL AS sap_deal_id,
+        NULL AS sap_deal_ruko_id,
+        '' AS sap_deal_name,
+        sap_clicks AS clicks,
+        -- clicks,
+        signups,
+        ftds,
+        deposits,
+        turnover,
+        net_revenue,
+        cpa_count,
+        cpa_earnings,
+        rs_earnings,
+        total_earnings
+    FROM {{ source('sap', 'dv_metrics') }}
+)
+
+SELECT * FROM sap_dv_metrics
