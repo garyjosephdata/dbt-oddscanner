@@ -70,13 +70,13 @@ from (
         1, 2
       having clicks > 0
       ) a
-left join {{ ref('sap_fraud_test_1')}} t1 on a.sap_account_ruko_id = t1.sap_account_ruko_id
-left join {{ ref('sap_fraud_test_2')}} t2 on a.sap_account_ruko_id = t2.sap_account_ruko_id
-left join {{ ref('sap_fraud_test_3')}} t3 on a.sap_account_ruko_id = t3.sap_account_ruko_id
-left join {{ ref('sap_fraud_test_4')}} t4 on a.sap_account_ruko_id = t4.sap_account_ruko_id
-left join {{ ref('sap_fraud_test_5')}} t5 on a.sap_account_ruko_id = t5.sap_account_ruko_id
-left join {{ ref('sap_fraud_test_6')}} t6 on a.sap_account_ruko_id = t6.sap_account_ruko_id
-left join {{ ref('sap_fraud_test_7')}} t7 on a.sap_account_ruko_id = t7.sap_account_ruko_id
+left join {{ ref('bi_sap_fraud_test_1')}} t1 on a.sap_account_ruko_id = t1.sap_account_ruko_id
+left join {{ ref('bi_sap_fraud_test_2')}} t2 on a.sap_account_ruko_id = t2.sap_account_ruko_id
+left join {{ ref('bi_sap_fraud_test_3')}} t3 on a.sap_account_ruko_id = t3.sap_account_ruko_id
+left join {{ ref('bi_sap_fraud_test_4')}} t4 on a.sap_account_ruko_id = t4.sap_account_ruko_id
+left join {{ ref('bi_sap_fraud_test_5')}} t5 on a.sap_account_ruko_id = t5.sap_account_ruko_id
+left join {{ ref('bi_sap_fraud_test_6')}} t6 on a.sap_account_ruko_id = t6.sap_account_ruko_id
+left join {{ ref('bi_sap_fraud_test_7')}} t7 on a.sap_account_ruko_id = t7.sap_account_ruko_id
 )
 
 select 'osp_analytics.bi_sap_fraud_score' as table_name, * from sap_bia_scores
