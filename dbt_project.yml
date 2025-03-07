@@ -42,3 +42,12 @@ models:
       +materialized: table
       input:
         +materialized: ephemeral
+    bi_sap_union_earnings:
+      +materialized: table
+    bi_sap_fraud_tests:
+      +materialized: table
+      input:
+        +materialized: ephemeral
+    bi_sap_fraud_score:
+      +materialized: table
+    
