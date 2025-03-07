@@ -1,11 +1,51 @@
-WITH union_metrics AS (
-  SELECT a.* FROM {{ ref('fct_sap_dv_metrics') }} a
-  JOIN (SELECT sap_advertiser_ruko_id FROM {{ source('sap', 'advertisers') }} WHERE dynamic_variable = 1) b ON a.sap_advertiser_ruko_id = b.sap_advertiser_ruko_id
-
-  UNION ALL
-
-  SELECT a.* FROM {{ ref('fct_sap_ms_metrics') }} a
-  JOIN (SELECT sap_advertiser_name FROM {{ source('sap', 'advertisers') }} WHERE dynamic_variable = 0) b ON a.sap_advertiser_name = b.sap_advertiser_name
+with union_weekly_earnings as (
+  select 
+    'sap_dv_weekly_earnings' as source_table,
+    'dv' as source,
+    'weekly' as frequency,
+    sap_account_id,
+    sap_account_ruko_id,
+    sap_account_name,
+    sap_advertiser_id,
+    a.sap_advertiser_ruko_id,
+    sap_advertiser_name,
+    sap_deal_id,
+    sap_deal_ruko_id,
+    sap_deal_name,
+    week as period,
+    week_start_date as period_start_date,
+    week_end_date as period_end_date,
+    cpa_earnings,
+    rs_earnings,
+    total_earnings,
+    invoice_total_earnings
+  from {{ source('sap', 'dv_weekly_earnings') }} a
+  join (select sap_advertiser_ruko_id from {{ source('sap','advertisers')}} where dynamic_variable = 1) b on a.sap_advertiser_ruko_id = b.sap_advertiser_ruko_id
+  
+  union all
+  
+  select 
+    'sap_ct_weekly_earnings' as source_table,
+    'ms' as source,
+    'weekly' as frequency,
+    sap_account_id,
+    sap_account_ruko_id,
+    sap_account_name,
+    sap_advertiser_id,
+    a.sap_advertiser_ruko_id,
+    sap_advertiser_name,
+    sap_deal_id,
+    sap_deal_ruko_id,
+    sap_deal_name,
+    week as period,
+    week_start_date as period_start_date,
+    week_end_date as period_end_date,
+    cpa_earnings,
+    rs_earnings,
+    total_earnings,
+    invoice_total_earnings
+  from {{ source('sap','ct_weekly_earnings')}} a
+  join (select sap_advertiser_ruko_id from {{ source('sap','advertisers')}} where dynamic_variable = 0) b on a.sap_advertiser_ruko_id = b.sap_advertiser_ruko_id
 )
 
-SELECT 'osp_analytics.sap_union_metrics_daily' as table_name, * FROM union_metrics
+select 'osp_analytics.sap_union_weekly_earnings' as table_name, * from union_weekly_earnings
