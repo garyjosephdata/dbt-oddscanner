@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: bi_sap_union_monthly_earnings
+    docs:
+      node_color: "#d98d18"
+
+  - name: bi_sap_union_weekly_earnings
+    docs:
+      node_color: "#d98d18"
