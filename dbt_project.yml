@@ -40,11 +40,11 @@ models:
     bi_sap_union_ct_ms_data:
       +materialized: table
       +docs:
-        node_color: "#33b5ff"
+        node_color: "#2c4cfe"
       input:
         +materialized: ephemeral
         +docs:
-          node_color: "#fef1cc"
+          node_color: "#20aedc"
     bi_sap_union_earnings:
       +materialized: table
     bi_sap_fraud_tests:
