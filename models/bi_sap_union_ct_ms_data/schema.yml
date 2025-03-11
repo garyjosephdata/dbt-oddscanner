@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: bi_sap_union_ct_ms_data
+    description: '{{ doc("bi_sap_union_ct_ms_data_description") }}' 
+
+  
