@@ -2,6 +2,26 @@ version: 2
 
 models:
   - name: bi_sap_union_ct_ms_data
-    description: '{{ doc("bi_sap_union_ct_ms_data_description") }}' 
+    description: '{{ doc("bi_sap_union_ct_ms_data_description") }}'
 
-  
+    columns:
+      - name: table_name
+        description: name of the current table for BI visualizations
+      - name: source_table
+        description: source table of the record (`sap_ct_ms_data` or `sap_dv_affiliate_links`)
+      - name: marketing_source_id
+        description: shows marketing_source_id for `sap_ct_ms_data` records, and NULL for `sap_dv_affiliate_links`
+      - name: marketing_source_name
+        description: shows marketing_source_name for `sap_ct_ms_data` records, and NULL for `sap_dv_affiliate_links`
+      - name: sap_traffic_source_id
+        description: shows marketing_source_id for `sap_dv_affiliate_links` records, and NULL for `sap_ct_ms_data` 
+      - name: sap_affiliate_link_id
+        description: shows sap_affiliate_link_id for `sap_dv_affiliate_links` records, and NULL for `sap_ct_ms_data`
+      - name: sap_deal_id
+        description: shows sap_deal_id for `sap_dv_affiliate_links` records, and NULL for `sap_ct_ms_data`
+      - name: sap_deal_ruko_id
+        description: shows sap_deal_ruko_id for `sap_dv_affiliate_links` records, and NULL for `sap_ct_ms_data`
+      - name: sap_deal_name
+        description: shows sap_deal_name for `sap_dv_affiliate_links` records, and NULL for `sap_ct_ms_data`
+      - name: clicks
+        description: shows sap_clicks for `sap_dv_affiliate_links` records, and clicks for `sap_ct_ms_data`
