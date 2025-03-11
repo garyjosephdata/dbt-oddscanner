@@ -39,8 +39,6 @@ models:
     # Applies to all files under models/example/
     bi_sap_union_ct_ms_data:
       +materialized: table
-      +docs:
-        node_color: "#f39709"
       input:
         +materialized: ephemeral
     bi_sap_union_earnings:

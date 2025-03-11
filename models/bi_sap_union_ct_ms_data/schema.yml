@@ -3,7 +3,8 @@ version: 2
 models:
   - name: bi_sap_union_ct_ms_data
     description: '{{ doc("bi_sap_union_ct_ms_data_description") }}'
-
+    docs:
+      node_color: "#d98d18"
     columns:
       - name: table_name
         description: name of the current table for BI visualizations
