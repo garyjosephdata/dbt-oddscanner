@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: bi_sap_fraud_score
+    docs:
+      node_color: "#d98d18"

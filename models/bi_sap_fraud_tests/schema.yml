@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: bi_sap_fraud_test_1
+    docs:
+      node_color: "#d98d18"
+
+  - name: bi_sap_fraud_test_2
+    docs:
+      node_color: "#d98d18"
+
+  - name: bi_sap_fraud_test_3
+    docs:
+      node_color: "#d98d18"
+
+  - name: bi_sap_fraud_test_4
+    docs:
+      node_color: "#d98d18"
+
+  - name: bi_sap_fraud_test_5
+    docs:
+      node_color: "#d98d18"
+
+  - name: bi_sap_fraud_test_6
+    docs:
+      node_color: "#d98d18"
+
+  - name: bi_sap_fraud_test_7
+    docs:
+      node_color: "#d98d18"
